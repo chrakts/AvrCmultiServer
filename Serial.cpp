@@ -117,7 +117,7 @@ void Serial::transmit( uint8_t data )
 				RE_DISABLE_0;
 			#endif
 			TE_ENABLE_0;
-			_delay_us(5);
+			_delay_us(10);
 			((USART_t *) &SERIAL_0)->DATA = data; //	UDR0 = data; 			        // Start transmittion
 		#else
 			while( (  ((USART_t *) &SERIAL_0)->STATUS & USART_DREIF_bm ) == 0 );
@@ -133,14 +133,14 @@ void Serial::transmit( uint8_t data )
 			#ifdef USE_RS485_FEEDBACK_1
 				TE_ENABLE_1;
 				((USART_t *) &SERIAL_1)->CTRLB = USART_TXEN_bm; // dient dazu den Receiver zurueckzusetzen
-				_delay_us(5);
+				_delay_us(10);
 				((USART_t *) &SERIAL_1)->CTRLB = USART_RXEN_bm | USART_TXEN_bm;
 			#else
 				((USART_t *) &SERIAL_1)->CTRLB = USART_TXEN_bm;
 				((USART_t *) &SERIAL_1)->CTRLA = USART_TXCINTLVL_1;
 				RE_DISABLE_1;
 				TE_ENABLE_1;
-				_delay_us(5);
+				_delay_us(10);
 			#endif
 			((USART_t *) &SERIAL_1)->DATA = data; //	UDR0 = data; 			        // Start transmittion
 		#else

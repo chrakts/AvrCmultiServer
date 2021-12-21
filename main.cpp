@@ -16,7 +16,7 @@
 
 
 
-void init_clock(int sysclk, int pll);
+//void init_clock(int sysclk, int pll);
 extern Communication cmulti;
 
 enum{WAITSTARTBYTE=0,WAITENDBYTE1,WAITENDBYTE2,SENDCOMMAND};
@@ -34,7 +34,7 @@ int main(void)
 	PORTD_DIRCLR = RxD_PIN;
 	PORTA_DIRSET = LED_ROT_PIN | LED_GRUEN_PIN;
 	PORTA_OUTCLR = LED_GRUEN_PIN | LED_ROT_PIN;
-	init_clock(SYSCLK,PLL);
+	init_clock(SYSCLK,PLL,true,CLOCK_CALIBRATION);
 	initReadMonitor();
 	initBusyCounter();
 	init_mytimer();
@@ -110,7 +110,7 @@ int main(void)
         }
     }
 }
-
+/*
 void init_clock(int sysclk, int pll)
 {
 	CLK_t *mein_clock;
@@ -170,3 +170,4 @@ void init_clock(int sysclk, int pll)
 		break;
 	}
 }
+*/

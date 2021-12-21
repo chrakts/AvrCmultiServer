@@ -23,9 +23,10 @@
 			</Environment>
 		</Build>
 		<Compiler>
-			<Add option="-mmcu=atxmega32a4u" />
 			<Add option="-Wall" />
-			<Add option="-DF_CPU=29491200UL" />
+			<Add option="-mmcu=atxmega32a4u" />
+			<Add option="-DF_CPU=32000000UL" />
+			<Add option="-DCLOCK_CALIBRATION=110" />
 		</Compiler>
 		<Linker>
 			<Add option="-mmcu=atxmega32a4u" />
@@ -39,6 +40,8 @@
 			<Add after="avr-objcopy --no-change-warnings -j .signature --change-section-lma .signature=0 -O ihex $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).sig" />
 			<Add after="avr-objcopy --no-change-warnings -j .fuse --change-section-lma .fuse=0 -O ihex $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).fuse" />
 		</ExtraCommands>
+		<Unit filename="../xmegaClocks/xmegaClocks.cpp" />
+		<Unit filename="../xmegaClocks/xmegaClocks.h" />
 		<Unit filename="CRC_Calc.cpp" />
 		<Unit filename="CRC_Calc.h" />
 		<Unit filename="CmultiBusy.cpp" />
@@ -58,10 +61,7 @@
 		<Unit filename="watchdog.cpp" />
 		<Unit filename="watchdog.h" />
 		<Extensions>
-			<envvars />
-			<code_completion />
 			<lib_finder disable_auto="1" />
-			<debugger />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

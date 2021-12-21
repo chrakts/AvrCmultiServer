@@ -21,11 +21,11 @@
 #include <locale.h>
 
 
-enum{QUARZ,CLK2M,CLK32M};
+//enum{QUARZ,CLK2M,CLK32M};
 
-#define SYSCLK QUARZ
+#define SYSCLK CLK32M
 
-#define PLL 2
+#define PLL 0
 
 #define  NODE 'C'
 #define BROADCAST "BR"
@@ -41,6 +41,7 @@ enum{QUARZ,CLK2M,CLK32M};
 #include "External.h"
 #include "CmultiBusy.h"
 #include "watchdog.h"
+#include "../xmegaClocks/xmegaClocks.h"
 
 #define LED_ROT_PIN         PIN4_bm
 #define LED_ROT_OFF		    PORTA_OUTCLR = LED_ROT_PIN

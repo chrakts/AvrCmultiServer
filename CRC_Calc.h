@@ -1,4 +1,4 @@
-/* 
+/*
 * CRC_Calc.h
 *
 * Created: 17.02.2016 21:15:29
@@ -9,7 +9,7 @@
 #ifndef __CRC_CALC_H__
 #define __CRC_CALC_H__
 
-#include "cmulti.h"
+#include "AvrCmultiServer.h"
 
 class CRC_Calc
 {
@@ -25,7 +25,7 @@ protected:
 private:
 	CRC_Calc( const CRC_Calc &c );
 	CRC_Calc& operator=( const CRC_Calc &c );
-	
+
 public:
 	CRC_Calc();
 	~CRC_Calc();

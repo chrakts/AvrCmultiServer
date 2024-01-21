@@ -27,6 +27,9 @@
 			<Add option="-mmcu=atxmega32a4u" />
 			<Add option="-DF_CPU=32000000UL" />
 			<Add option="-DCLOCK_CALIBRATION=110" />
+			<Add directory="../xmegaClocks" />
+			<Add directory="/home/christof/Daten/Software/repositories/timer" />
+			<Add directory="/home/christof/Daten/Software/repositories/AvrCmultiServer" />
 		</Compiler>
 		<Linker>
 			<Add option="-mmcu=atxmega32a4u" />
@@ -40,8 +43,11 @@
 			<Add after="avr-objcopy --no-change-warnings -j .signature --change-section-lma .signature=0 -O ihex $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).sig" />
 			<Add after="avr-objcopy --no-change-warnings -j .fuse --change-section-lma .fuse=0 -O ihex $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).fuse" />
 		</ExtraCommands>
+		<Unit filename="../timer/timer.cpp" />
+		<Unit filename="../timer/timer.h" />
 		<Unit filename="../xmegaClocks/xmegaClocks.cpp" />
 		<Unit filename="../xmegaClocks/xmegaClocks.h" />
+		<Unit filename="AvrCmultiServer.h" />
 		<Unit filename="CRC_Calc.cpp" />
 		<Unit filename="CRC_Calc.h" />
 		<Unit filename="CmultiBusy.cpp" />
@@ -51,13 +57,12 @@
 		<Unit filename="Communication.h" />
 		<Unit filename="External.h" />
 		<Unit filename="Globals.cpp" />
-		<Unit filename="MyTimer.cpp" />
-		<Unit filename="MyTimer.h" />
 		<Unit filename="Serial.cpp" />
 		<Unit filename="Serial.h" />
 		<Unit filename="UART.h" />
-		<Unit filename="cmulti.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="myTimers.cpp" />
+		<Unit filename="myTimers.h" />
 		<Unit filename="watchdog.cpp" />
 		<Unit filename="watchdog.h" />
 		<Extensions>

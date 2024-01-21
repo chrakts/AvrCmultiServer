@@ -6,7 +6,7 @@
  */
 #define EXTERNALS_H_
 
-#include "cmulti.h"
+#include "AvrCmultiServer.h"
 
 char Compilation_Date[] = __DATE__;
 char Compilation_Time[] = __TIME__;
@@ -18,11 +18,6 @@ volatile char UART1_ring_buffer[UART1_RING_BUFFER_SIZE];
 
 volatile uint8_t sendFree;
 volatile bool nextSendReady=false;
-
-// Timerwert 16 entspricht 100ms
-volatile TIMER MyTimers[MYTIMER_NUM]= {	{TM_START,RESTART_YES,4,0,nextSend},
-{TM_STOP,RESTART_NO,100,0,NULL}		// Timeout-Timer
-};
 
 Serial debug(0);
 Communication cmulti(1,"DF",8);

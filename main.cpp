@@ -5,7 +5,7 @@
  * Author : chrak_2
  */
 
-#include "cmulti.h"
+#include "AvrCmultiServer.h"
 
 
 #define LED_PIN				PIN7_bm

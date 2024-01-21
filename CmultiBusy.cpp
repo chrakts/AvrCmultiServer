@@ -5,7 +5,7 @@
  *  Author: chrak_2
  */
 
-#include "cmulti.h"
+#include "AvrCmultiServer.h"
 
 /* Hier wird der Pin konfiguriert, der die Interruptueberwachung bekommt, ob der Bus belegt ist */
 void initReadMonitor()

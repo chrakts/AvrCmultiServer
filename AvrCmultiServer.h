@@ -37,11 +37,13 @@
 #include "Serial.h"
 #include "Communication.h"
 #include "CRC_Calc.h"
-#include "MyTimer.h"
+#include "myTimers.h"
 #include "External.h"
 #include "CmultiBusy.h"
 #include "watchdog.h"
-#include "../xmegaClocks/xmegaClocks.h"
+#include "xmegaClocks.h"
+#include "timer.h"
+#include "myTimers.h"
 
 #define LED_ROT_PIN         PIN4_bm
 #define LED_ROT_OFF		    PORTA_OUTCLR = LED_ROT_PIN
